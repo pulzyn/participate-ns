@@ -1,0 +1,128 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "participate": "https://w3id.org/participate/ns#",
+    "forge": "https://forgefed.org/ns#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+
+    "status": "participate:status",
+    "statusHistory": {
+      "@id": "participate:statusHistory",
+      "@container": "@list",
+      "@context": {
+        "status": "participate:status",
+        "timestamp": "participate:timestamp",
+        "note": { "@id": "participate:statusNote", "@type": "@json" }
+      }
+    },
+    "editHistory": {
+      "@id": "participate:editHistory",
+      "@container": "@list",
+      "@context": {
+        "timestamp": "participate:timestamp",
+        "editor": "participate:editor",
+        "changes": { "@id": "participate:changes", "@type": "@json" },
+        "notifiedParticipants": "participate:notifiedParticipants"
+      }
+    },
+    "discussionsClosed": "participate:discussionsClosed",
+    "resolver": "participate:resolver",
+
+    "participants": {
+      "@id": "participate:participants",
+      "@context": {
+        "creator": "participate:creator",
+        "moderators": { "@id": "participate:moderators", "@container": "@set" },
+        "members": { "@id": "participate:members", "@container": "@set" },
+        "followers": { "@id": "participate:followers", "@container": "@set" }
+      }
+    },
+    "announcements": {
+      "@id": "participate:relays",
+      "@container": "@list",
+      "@context": {
+        "id": "participate:relayId",
+        "actor": "participate:relayedBy",
+        "relayType": "participate:relayType",
+        "createdAt": "participate:createdAt"
+      }
+    },
+
+    "quest": {
+      "@id": "participate:details",
+      "@context": {
+        "category": "participate:category",
+        "topics": { "@id": "participate:topics", "@container": "@set" },
+        "geographic": "participate:geographic",
+        "timing": "participate:timing",
+        "visibility": "participate:visibility",
+        "circle": "participate:circle",
+        "confidential": "participate:confidential",
+        "exclusions": "participate:exclusions",
+        "exclusionTags": { "@id": "participate:exclusionTags", "@container": "@set" },
+        "localDefinition": "participate:localDefinition",
+        "deadline": "participate:deadline",
+        "circleName": "participate:circleName",
+        "forSomeoneElse": {
+          "@id": "participate:onBehalfOf",
+          "@context": {
+            "name": "participate:beneficiaryName",
+            "relationship": "participate:relationship"
+          }
+        },
+        "relayType": "participate:relayType"
+      }
+    },
+
+    "conversation": {
+      "@id": "participate:conversationPolicy",
+      "@context": {
+        "layout": "participate:layout",
+        "options": {
+          "@id": "participate:layoutOptions",
+          "@context": {
+            "grouping": "participate:grouping",
+            "branchOwner": "participate:branchOwner",
+            "branchScope": "participate:branchScope",
+            "relayRights": "participate:relayRights",
+            "maxDepth": "participate:maxDepth",
+            "creatorSeesBranches": "participate:creatorSeesBranches",
+            "branchMembersSeeEachOther": "participate:branchMembersSeeEachOther",
+            "wholeQuestGroup": "participate:wholeTicketGroup",
+            "directMessages": "participate:directMessages",
+            "followers": "participate:followerPolicy",
+            "intermediaryCanInvite": "participate:intermediaryCanInvite",
+            "updatesPromotion": "participate:updatesPromotion"
+          }
+        },
+        "resolvedFrom": {
+          "@id": "participate:layoutResolution",
+          "@context": {
+            "entitled": { "@id": "participate:entitledLayouts", "@container": "@set" },
+            "instanceAllowed": { "@id": "participate:instanceAllowedLayouts", "@container": "@set" },
+            "instanceDefault": "participate:instanceDefaultLayout",
+            "creatorChoice": { "@id": "participate:creatorLayoutChoice", "@type": "@json" },
+            "source": "participate:layoutSource"
+          }
+        },
+        "frozenAt": "participate:frozenAt"
+      }
+    },
+
+    "beneficiary": {
+      "@id": "participate:beneficiary",
+      "@context": {
+        "status": "participate:claimStatus",
+        "heldBy": "participate:heldBy",
+        "claimedBy": "participate:claimedBy",
+        "claimedAt": "participate:claimedAt",
+        "lapsedAt": "participate:lapsedAt",
+        "reason": "participate:lapseReason"
+      }
+    },
+
+    "isResolved": { "@id": "forge:isResolved", "@type": "xsd:boolean" },
+    "resolved": { "@id": "forge:resolved", "@type": "xsd:dateTime" },
+    "resolvedBy": { "@id": "forge:resolvedBy", "@type": "@id" }
+  }
+}
