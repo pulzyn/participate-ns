@@ -20,21 +20,21 @@
       "@container": "@list",
       "@context": {
         "timestamp": "participate:timestamp",
-        "editor": "participate:editor",
+        "editor": { "@id": "participate:editor", "@type": "@id" },
         "changes": { "@id": "participate:changes", "@type": "@json" },
         "notifiedParticipants": "participate:notifiedParticipants"
       }
     },
     "discussionsClosed": "participate:discussionsClosed",
-    "resolver": "participate:resolver",
+    "resolver": { "@id": "participate:resolver", "@type": "@id" },
 
     "participants": {
       "@id": "participate:participants",
       "@context": {
-        "creator": "participate:creator",
-        "moderators": { "@id": "participate:moderators", "@container": "@set" },
-        "members": { "@id": "participate:members", "@container": "@set" },
-        "followers": { "@id": "participate:followers", "@container": "@set" }
+        "creator": { "@id": "participate:creator", "@type": "@id" },
+        "moderators": { "@id": "participate:moderators", "@type": "@id", "@container": "@set" },
+        "members": { "@id": "participate:members", "@type": "@id", "@container": "@set" },
+        "followers": { "@id": "participate:followers", "@type": "@id", "@container": "@set" }
       }
     },
     "announcements": {
@@ -42,7 +42,7 @@
       "@container": "@list",
       "@context": {
         "id": "participate:relayId",
-        "actor": "participate:relayedBy",
+        "actor": { "@id": "participate:relayedBy", "@type": "@id" },
         "relayType": "participate:relayType",
         "createdAt": "participate:createdAt"
       }
@@ -113,8 +113,8 @@
       "@id": "participate:beneficiary",
       "@context": {
         "status": "participate:claimStatus",
-        "heldBy": "participate:heldBy",
-        "claimedBy": "participate:claimedBy",
+        "heldBy": { "@id": "participate:heldBy", "@type": "@id" },
+        "claimedBy": { "@id": "participate:claimedBy", "@type": "@id" },
         "claimedAt": "participate:claimedAt",
         "lapsedAt": "participate:lapsedAt",
         "reason": "participate:lapseReason"
