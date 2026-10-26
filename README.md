@@ -27,6 +27,10 @@ Every Participate instance also serves the same document at
 The w3id.org identifier redirects here; when the project moves to its own
 domain, only the redirect changes and no term IRI does.
 
+CI validates `ns.jsonld` on every pull request. Context changes are additive
+only; a change that alters meaning is published as a new versioned file served
+at `https://w3id.org/participate/ns/v<N>`, while `ns` keeps its current content.
+
 ## Licence
 
 The vocabulary is dedicated to the public domain under
