@@ -28,6 +28,7 @@
     "discussionsClosed": "participate:discussionsClosed",
     "resolver": { "@id": "participate:resolver", "@type": "@id" },
 
+    "participantCount": "participate:participantCount",
     "participants": {
       "@id": "participate:participants",
       "@context": {
